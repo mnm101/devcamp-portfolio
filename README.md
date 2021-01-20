@@ -1,24 +1,15 @@
-# Devcamp Prtfolio
+# Devcamp Portfolio Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> This is a Ruby on Rainls application that allows users to create their own protfolio.
 
-Things you may want to cover:
+### Features
 
-* Ruby version
+- Real time chat engine for comments
+- Blog
+- Portfolio
+- Drag and drop interface
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```ruby
+def my_new_method
+end
+```
