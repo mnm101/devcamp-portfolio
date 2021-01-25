@@ -31,7 +31,7 @@ end
 
 9.times do |portfolio_item|
 	Portfolio.create!(
-title:"Portfolio tile: #{portfolio_item}",
+title:"Portfolio title: #{portfolio_item}",
 subtitle: "my great service",
 body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
