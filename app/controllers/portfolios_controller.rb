@@ -8,6 +8,10 @@ def new
 	@portfolio_items = Portfolio.new
 end
 
+def show
+	@portfolio_item = Portfolio.find(params[:id])
+end
+
 def create
     @portfolio_items = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
 
@@ -33,5 +37,6 @@ def update
       end
     end
   end
-
+def destroy
+end
 end
