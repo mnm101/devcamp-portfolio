@@ -1,8 +1,14 @@
-class PortfoliosController < ApplicationController
+ class PortfoliosController < ApplicationController
 	def index
 		@portfolio_item = Portfolio.all
-
+    ### Scope Examples:
+    #Portfolio.ruby_on_rails_portfolio_items
+    #@portfolio_item = Portfolio.angular
 	end
+
+  def angular
+    @angular_portfolio_items = Portfolio.angular
+  end
 
 def new
 	@portfolio_item = Portfolio.new
