@@ -1,17 +1,18 @@
- class PortfoliosController < ApplicationController
-	def index
-		@portfolio_item = Portfolio.all
-    ### Scope Examples:
-    #Portfolio.ruby_on_rails_portfolio_items
-    #@portfolio_item = Portfolio.angular
-	end
+class PortfoliosController < ApplicationController
+def index
+	@portfolio_item = Portfolio.all
+   ### Scope Examples:
+   #Portfolio.ruby_on_rails_portfolio_items
+   #@portfolio_item = Portfolio.angular
+end
 
-  def angular
-    @angular_portfolio_items = Portfolio.angular
-  end
+def angular
+  @angular_portfolio_items = Portfolio.angular
+end
 
 def new
 	@portfolio_item = Portfolio.new
+  3.times {@portfolio_item.technologies.build}
 end
 
 def show
@@ -19,16 +20,16 @@ def show
 end
 
 def create
-    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
+  @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
 
-    respond_to do |format|
-      if @portfolio_item.save
-        format.html { redirect_to portfolios_path notice: 'Portfolio item now Live' }
-      else
-        format.html { render :new }
-      end
+  respond_to do |format|
+    if @portfolio_item.save
+      format.html { redirect_to portfolios_path notice: 'Portfolio item now Live' }
+    else
+      format.html { render :new }
     end
   end
+end
 
 def edit
 	@portfolio_item = Portfolio.find(params[:id])
